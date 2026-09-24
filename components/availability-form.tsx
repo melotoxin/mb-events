@@ -1,11 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { eventTypes, guestRanges } from "@/lib/lead";
 
-export function AvailabilityForm() {
+export function AvailabilityForm({ source = "availability" }: { source?: "availability" | "contact" }) {
   const [form, setForm] = useState({ eventDate: "", eventType: "", location: "", guestCount: "", name: "", phone: "", email: "" });
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
@@ -16,13 +15,13 @@ export function AvailabilityForm() {
     if (!form.eventType || !form.guestCount) { setError("Please choose an event type and guest count."); return; }
     setBusy(true);
     try {
-      const r = await fetch("/api/leads", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ ...form, source: "availability", priorities: [], contactMethod: "either", website: "" }) });
+      const r = await fetch("/api/leads", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ ...form, source, priorities: [], contactMethod: "either", website: "" }) });
       const result = await r.json() as { error?: string };
       if (!r.ok) throw new Error(result.error || "Please check your details.");
       setDone(true);
     } catch (cause) { setError(cause instanceof Error ? cause.message : "Please try again."); } finally { setBusy(false); }
   }
-  if (done) return <div className="form-card success-card" role="status"><p className="eyebrow">REQUEST RECEIVED</p><h2>We’re checking your date.</h2><p>An MB Event Specialist will contact you shortly. Availability is confirmed only after speaking with our team.</p><Link className="button button-red" href="/">Explore MB Events →</Link></div>;
+  if (done) return <div className="form-card success-card" role="status"><p className="eyebrow">REQUEST RECEIVED</p><h2>We’re checking your date.</h2><p>An MB Event Specialist will contact you shortly. Availability is confirmed only after speaking with our team.</p><a className="button button-red" href="/">Explore MB Events →</a></div>;
   return <form className="form-card availability-form" onSubmit={submit}><div className="field-grid">
     <label>Event date<Input className="mb-input" required type="date" min={new Date().toISOString().slice(0, 10)} value={form.eventDate} onChange={e => setForm({ ...form, eventDate: e.target.value })} /></label>
     <div className="field-label"><label id="event-type-label">Event type</label><Select value={form.eventType} onValueChange={eventType => setForm({ ...form, eventType })}><SelectTrigger className="mb-select" aria-labelledby="event-type-label"><SelectValue placeholder="Select an event" /></SelectTrigger><SelectContent>{eventTypes.map(type => <SelectItem value={type} key={type}>{type}</SelectItem>)}</SelectContent></Select></div>
