@@ -1,5 +1,6 @@
 import { Camera, Music2, Video } from "lucide-react";
 import { Navigation } from "@/components/site-navigation";
+import { AdvancedButton } from "@/components/advanced-button";
 
 const socialProfiles = [
   { label: "Instagram", host: "instagram.com", href: process.env.NEXT_PUBLIC_MB_INSTAGRAM_URL || "", Icon: Camera },
@@ -15,7 +16,7 @@ const socialProfiles = [
 });
 
 export function PublicHeader() {
-  return <header className="inner-header"><div className="shell inner-header-row"><a className="inner-brand" href="/"><span className="brand-monogram">MB</span><span>MICHAEL BRYAN<br />EVENTS</span></a><Navigation ariaLabel="Main navigation" /><a className="inner-date" href="/availability">Check My Date ↗</a><a className="inner-menu" href="/menu" aria-label="Open menu">Menu <span aria-hidden="true">☰</span></a></div></header>;
+  return <header className="inner-header"><div className="shell inner-header-row"><a className="inner-brand" href="/"><span className="brand-monogram">MB</span><span>MICHAEL BRYAN<br />EVENTS</span></a><Navigation ariaLabel="Main navigation" /><AdvancedButton href="/availability" size="compact" arrow="up-right" className="inner-date">Check My Date</AdvancedButton><a className="inner-menu" href="/menu" aria-label="Open menu">Menu <span aria-hidden="true">☰</span></a></div></header>;
 }
 
 export function PublicFooter() {

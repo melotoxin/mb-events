@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { eventTypes } from "@/lib/lead";
+import { AdvancedButton } from "@/components/advanced-button";
 
 const styles = ["The Nightclub", "Modern Elegance", "Traditional"] as const;
 type EventType = (typeof eventTypes)[number];
@@ -82,7 +83,7 @@ export function MultiStepLeadCapture() {
           <p className="mt-4 text-xs text-[#596373]">Context: <a className="underline" href="https://www.theknot.com/content/average-wedding-cost-nyc" target="_blank" rel="noopener noreferrer">NYC DJ cost data</a> and <a className="underline" href="https://www.bls.gov/regions/northeast/news-release/2026/consumerpriceindex_newyork_20260911.htm" target="_blank" rel="noopener noreferrer">August 2026 New York area CPI</a>.</p>
         </div>
         <div className="mt-7 grid gap-4 text-sm text-[#344152] sm:grid-cols-3"><p><b>01 / Entertainment</b><br />Music, hosting and event flow.</p><p><b>02 / Atmosphere</b><br />Lighting and production options.</p><p><b>03 / Personalization</b><br />Moments built around your priorities.</p></div>
-        <a href="/experiences" className="mt-8 inline-flex min-h-12 items-center bg-[#c72b2b] px-6 text-[.65rem] font-bold uppercase tracking-[.15em] text-white">Explore MB experiences ↗</a>
+        <AdvancedButton href="/experiences" arrow="up-right" className="mt-8">Explore MB experiences</AdvancedButton>
       </div>
     );
   }
@@ -98,11 +99,11 @@ export function MultiStepLeadCapture() {
         <motion.div key={step} initial={reducedMotion ? false : { opacity: 0, x: 15 }} animate={{ opacity: 1, x: 0 }} exit={reducedMotion ? undefined : { opacity: 0, x: -15 }} transition={{ duration: reducedMotion ? 0 : 0.2 }}>
           <h2 id="quoter-heading" className="mt-9 font-serif text-[clamp(2.2rem,4vw,3.7rem)] leading-tight tracking-[-.04em] text-[#101b2a]">{stepTitles[step]}</h2>
 
-          {step === 0 && <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{eventTypes.map((type) => <button key={type} type="button" aria-pressed={answers.eventType === type} onClick={() => setAnswers((old) => ({ ...old, eventType: type }))} className={`min-h-16 border px-5 text-left text-sm font-semibold transition-colors ${answers.eventType === type ? "border-[#c72b2b] bg-[#fff5f0] text-[#101b2a]" : "border-[#d9d4cd] text-[#344152] hover:border-[#c72b2b]"}`}>{type}</button>)}</div>}
+          {step === 0 && <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{eventTypes.map((type) => <AdvancedButton key={type} variant="outline" type="button" aria-pressed={answers.eventType === type} onClick={() => setAnswers((old) => ({ ...old, eventType: type }))} className={`min-h-16 justify-start px-5 text-left text-sm font-semibold normal-case tracking-normal ${answers.eventType === type ? "border-[#c72b2b] bg-[#fff5f0] text-[#101b2a]" : "border-[#d9d4cd] text-[#344152]"}`}>{type}</AdvancedButton>)}</div>}
 
           {step === 1 && <label className="mt-8 grid max-w-sm gap-3 text-sm font-semibold text-[#344152]">Event date<input type="date" required min={new Date().toISOString().slice(0, 10)} value={answers.eventDate} onChange={(event) => setAnswers((old) => ({ ...old, eventDate: event.target.value }))} className="h-14 border border-[#d9d4cd] bg-[#fbfaf8] px-4 text-base" /></label>}
 
-          {step === 2 && <div className="mt-8 grid gap-3 sm:grid-cols-3">{styles.map((style) => <button key={style} type="button" aria-pressed={answers.style === style} onClick={() => setAnswers((old) => ({ ...old, style }))} className={`min-h-28 border px-5 text-left font-serif text-xl transition-colors ${answers.style === style ? "border-[#c72b2b] bg-[#fff5f0] text-[#101b2a]" : "border-[#d9d4cd] text-[#344152] hover:border-[#c72b2b]"}`}>{style}</button>)}</div>}
+          {step === 2 && <div className="mt-8 grid gap-3 sm:grid-cols-3">{styles.map((style) => <AdvancedButton key={style} variant="outline" type="button" aria-pressed={answers.style === style} onClick={() => setAnswers((old) => ({ ...old, style }))} className={`min-h-28 justify-start px-5 text-left font-serif text-xl font-normal normal-case tracking-normal ${answers.style === style ? "border-[#c72b2b] bg-[#fff5f0] text-[#101b2a]" : "border-[#d9d4cd] text-[#344152]"}`}>{style}</AdvancedButton>)}</div>}
 
           {step === 3 && <div className="mt-8 grid gap-5 sm:grid-cols-2"><label className="grid gap-2 text-sm font-semibold text-[#344152]">Full name<input required minLength={2} maxLength={120} autoComplete="name" value={answers.name} onChange={(event) => setAnswers((old) => ({ ...old, name: event.target.value }))} className="h-14 border border-[#d9d4cd] bg-[#fbfaf8] px-4 text-base" /></label><label className="grid gap-2 text-sm font-semibold text-[#344152]">Email<input required type="email" autoComplete="email" value={answers.email} onChange={(event) => setAnswers((old) => ({ ...old, email: event.target.value }))} className="h-14 border border-[#d9d4cd] bg-[#fbfaf8] px-4 text-base" /></label><label className="absolute -left-[9999px]" aria-hidden="true">Website<input tabIndex={-1} autoComplete="off" value={answers.website} onChange={(event) => setAnswers((old) => ({ ...old, website: event.target.value }))} /></label></div>}
         </motion.div>
@@ -110,8 +111,8 @@ export function MultiStepLeadCapture() {
 
       {error && <p className="mt-6 border-l-[3px] border-[#c72b2b] bg-[#fff0ee] px-4 py-3 text-sm text-[#882727]" role="alert">{error}</p>}
       <div className="mt-9 flex flex-wrap items-center justify-between gap-4">
-        {step > 0 ? <button type="button" onClick={() => { setError(""); setStep((step - 1) as Step); }} className="min-h-12 px-2 text-sm font-semibold text-[#344152]">← Back</button> : <span />}
-        {step === 3 ? <button type="submit" disabled={busy} className="min-h-14 bg-[#c72b2b] px-6 text-[.65rem] font-bold uppercase tracking-[.15em] text-white transition-colors hover:bg-[#a52121] disabled:opacity-60">{busy ? "Sending…" : "Unlock planning range ↗"}</button> : <button type="button" onClick={next} className="min-h-14 bg-[#c72b2b] px-6 text-[.65rem] font-bold uppercase tracking-[.15em] text-white transition-colors hover:bg-[#a52121]">Continue →</button>}
+        {step > 0 ? <AdvancedButton type="button" variant="secondary" size="compact" arrow="left" onClick={() => { setError(""); setStep((step - 1) as Step); }}>Back</AdvancedButton> : <span />}
+        {step === 3 ? <AdvancedButton type="submit" disabled={busy} arrow="up-right">{busy ? "Sending…" : "Unlock planning range"}</AdvancedButton> : <AdvancedButton type="button" onClick={next} arrow="right">Continue</AdvancedButton>}
       </div>
       <p className="mt-5 text-xs leading-relaxed text-[#68727e]">Your details are used to follow up about this event. No date or price is confirmed until MB speaks with you.</p>
     </form>

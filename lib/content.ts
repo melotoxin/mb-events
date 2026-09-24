@@ -2,7 +2,7 @@ export const experiences = [
   { slug: "nightclub", title: "The Nightclub", eyebrow: "HIGH ENERGY", description: "For a room ready to move. Build around the DJ, MC, dance floor energy, and lighting that changes the atmosphere.", features: ["Dual DJ/MC team", "Intelligent lighting", "Premium sub-array"], image: "/media/concept-packed-concert-crowd.webp" },
   { slug: "modern-luxury", title: "Modern Luxury", eyebrow: "REFINED ATMOSPHERE", description: "A considered blend of music, presentation, and lighting for a celebration with an elegant point of view.", features: ["Tailored music plan", "Elegant uplighting", "Clean DJ presentation"], image: "/media/concept-cinematic-cold-sparks.webp" },
   { slug: "full-takeover", title: "Full Takeover", eyebrow: "THE ENTIRE ROOM", description: "Think beyond one service. Explore entertainment, room lighting, special moments, and guest experiences together.", features: ["Entertainment direction", "Room lighting plan", "Photo experience options"], image: "/media/concept-high-end-luxury-dancefloor.webp" },
-  { slug: "build-your-own", title: "Build Your Own", eyebrow: "YOUR MIX", description: "Choose the elements that matter to you and let MB shape a proposal around your priorities.", features: ["DJ & MC options", "Lighting options", "Photo booth options", "Casino and karaoke options"], image: "/media/photo-booth.webp" },
+  { slug: "build-your-own", title: "Build Your Own", eyebrow: "YOUR MIX", description: "Choose the elements that matter to you and let MB shape a proposal around your priorities.", features: ["DJ & MC options", "Lighting options", "Photo booth options", "Casino and karaoke options"], image: "/media/concept-packed-concert-crowd.webp" },
 ];
 
 export const eventPages = [

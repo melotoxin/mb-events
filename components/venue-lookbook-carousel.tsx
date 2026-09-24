@@ -1,8 +1,9 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { motion, useReducedMotion } from "motion/react";
+import { useReducedMotion } from "motion/react";
 import Image from "next/image";
+import { AdvancedButton } from "@/components/advanced-button";
 
 type VenueSlide = {
   name: string;
@@ -52,8 +53,8 @@ export function VenueLookbookCarousel() {
             </h2>
           </div>
           <div className="flex gap-2" aria-label="Lookbook controls">
-            <motion.button type="button" onClick={() => goTo(activeIndex - 1)} disabled={activeIndex === 0} whileTap={reducedMotion ? undefined : { scale: 0.94 }} className="grid size-11 place-items-center border border-[#7e7468] text-xl disabled:cursor-default disabled:opacity-35" aria-label="Previous venue" aria-controls="venue-lookbook-track">←</motion.button>
-            <motion.button type="button" onClick={() => goTo(activeIndex + 1)} disabled={activeIndex === venues.length - 1} whileTap={reducedMotion ? undefined : { scale: 0.94 }} className="grid size-11 place-items-center border border-[#7e7468] text-xl disabled:cursor-default disabled:opacity-35" aria-label="Next venue" aria-controls="venue-lookbook-track">→</motion.button>
+            <AdvancedButton type="button" variant="outline" size="icon" onClick={() => goTo(activeIndex - 1)} disabled={activeIndex === 0} className="text-xl" aria-label="Previous venue" aria-controls="venue-lookbook-track">←</AdvancedButton>
+            <AdvancedButton type="button" variant="outline" size="icon" onClick={() => goTo(activeIndex + 1)} disabled={activeIndex === venues.length - 1} className="text-xl" aria-label="Next venue" aria-controls="venue-lookbook-track">→</AdvancedButton>
           </div>
         </div>
 

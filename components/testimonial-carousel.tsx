@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import Image from "next/image";
+import { AdvancedButton } from "@/components/advanced-button";
 
 const testimonials = [
   {
@@ -48,8 +49,8 @@ export function TestimonialCarousel() {
         <div className="testimonial-heading">
           <div><p className="eyebrow">IN THEIR OWN WORDS</p><h2 id="testimonial-heading">The moments they <em>remember.</em></h2></div>
           <div className="testimonial-controls" aria-label="Testimonial controls">
-            <button type="button" onClick={() => goTo(activeIndex - 1)} disabled={activeIndex === 0} aria-label="Previous testimonial" aria-controls="testimonial-track">←</button>
-            <button type="button" onClick={() => goTo(activeIndex + 1)} disabled={activeIndex === testimonials.length - 1} aria-label="Next testimonial" aria-controls="testimonial-track">→</button>
+            <AdvancedButton type="button" variant="outline" size="icon" onClick={() => goTo(activeIndex - 1)} disabled={activeIndex === 0} aria-label="Previous testimonial" aria-controls="testimonial-track">←</AdvancedButton>
+            <AdvancedButton type="button" variant="outline" size="icon" onClick={() => goTo(activeIndex + 1)} disabled={activeIndex === testimonials.length - 1} aria-label="Next testimonial" aria-controls="testimonial-track">→</AdvancedButton>
           </div>
         </div>
         <ul className="testimonial-track" id="testimonial-track" ref={trackRef} onScroll={(event) => {

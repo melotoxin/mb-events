@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "motion/react";
+import { AdvancedButton } from "@/components/advanced-button";
 
 const timeline = [
   { time: "04:30", label: "Guest arrival", detail: "Welcome music" },
@@ -27,7 +28,7 @@ export function ClientPortalTeaser() {
             <div><span className="mb-3 block text-xs font-bold tracking-[.16em] text-[#d8b787]">02 / CURATE</span>Share the music that feels like you.</div>
             <div><span className="mb-3 block text-xs font-bold tracking-[.16em] text-[#d8b787]">03 / COORDINATE</span>Bring the key details together.</div>
           </div>
-          <a className="mt-10 inline-flex min-h-12 items-center bg-[#c72b2b] px-6 text-[.65rem] font-bold uppercase tracking-[.15em] transition-colors hover:bg-[#a52121]" href="/build">Start my event ↗</a>
+          <AdvancedButton href="/build" arrow="up-right" className="mt-10">Start my event</AdvancedButton>
         </div>
 
         <motion.div

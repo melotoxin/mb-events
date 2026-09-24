@@ -1,4 +1,10 @@
 /* Landing page conversion and trust sections */
+.advanced-card{color:#fff}
+.advanced-button[data-variant="primary"]{color:#fff}
+.advanced-button[data-variant="secondary"][data-tone="light"],.advanced-button[data-variant="outline"][data-tone="light"]{color:#17253a}
+.advanced-button[data-variant="secondary"][data-tone="dark"],.advanced-button[data-variant="outline"][data-tone="dark"]{color:#fff}
+.advanced-button[data-variant="outline"][data-tone="light"]:hover{color:#fff}
+.advanced-button[data-variant="outline"][data-tone="dark"]:hover{color:#17253a}
 .home-experience-grid a{min-height:390px;transition:background .25s ease,transform .25s ease,box-shadow .25s ease}
 .home-experience-grid a:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(16,27,42,.12)}
 .home-experience-grid a:focus-visible{position:relative;z-index:1}

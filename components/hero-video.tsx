@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import { AdvancedButton } from "@/components/advanced-button";
 
 export function HeroVideo() {
   const ref = useRef<HTMLVideoElement>(null);
@@ -12,5 +13,5 @@ export function HeroVideo() {
     return () => reduced.removeEventListener("change", onChange);
   }, []);
   function toggle() { if (!ref.current) return; if (playing) { ref.current.pause(); setPlaying(false); } else { ref.current.play().then(() => setPlaying(true)).catch(() => {}); } }
-  return <><video ref={ref} className="hero-video" autoPlay muted loop playsInline preload="metadata" poster="/media/concept-cinematic-cold-sparks.webp" aria-label="MB Events sparkler entrance footage"><source src="/media/mb-hero-sparkler.mp4" type="video/mp4" /></video><button className="video-toggle" type="button" onClick={toggle} aria-label={playing ? "Pause background video" : "Play background video"}>{playing ? "Ⅱ" : "▶"}<span>{playing ? "PAUSE FILM" : "PLAY FILM"}</span></button></>;
+  return <><video ref={ref} className="hero-video" autoPlay muted loop playsInline preload="metadata" poster="/media/concept-cinematic-cold-sparks.webp" aria-label="MB Events sparkler entrance footage"><source src="/media/mb-hero-sparkler.mp4" type="video/mp4" /></video><AdvancedButton className="video-toggle" variant="secondary" tone="dark" size="compact" type="button" onClick={toggle} aria-label={playing ? "Pause background video" : "Play background video"}>{playing ? "Ⅱ" : "▶"}<span>{playing ? "PAUSE FILM" : "PLAY FILM"}</span></AdvancedButton></>;
 }
