@@ -4,7 +4,7 @@
 .home-experience-grid a:focus-visible{position:relative;z-index:1}
 .home-experience-grid ul{margin:10px 0 30px;padding-left:18px;color:#445160;font-size:13px;line-height:1.7}
 .home-experience-grid li::marker{color:var(--red)}
-.start-image{background-image:url('/media/luxury-dancefloor.webp');background-position:55% center}
+.start-image{background-image:url('/media/concept-high-end-luxury-dancefloor.webp');background-position:55% center}
 
 .testimonial-section{background:#fff;padding:105px 0 115px;overflow:hidden}
 .testimonial-heading{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:34px}

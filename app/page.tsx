@@ -4,7 +4,11 @@ import { QuickAvailability } from "@/components/quick-availability";
 import { LandingFaq } from "@/components/landing-faq";
 import { TestimonialCarousel } from "@/components/testimonial-carousel";
 import { PublicFooter } from "@/components/public-shell";
-import { eventPages, experiences, gallery } from "@/lib/content";
+import { Navigation } from "@/components/site-navigation";
+import { InteractiveServiceCards } from "@/components/interactive-service-cards";
+import { VenueLookbookCarousel } from "@/components/venue-lookbook-carousel";
+import { ClientPortalTeaser } from "@/components/client-portal-teaser";
+import { experiences, gallery } from "@/lib/content";
 
 const eventTypes = ["Weddings", "Sweet 16s", "Quinceañeras", "Mitzvahs", "Corporate", "Private events"];
 
@@ -12,12 +16,12 @@ export default function Home() {
   return (
     <main>
       <section className="hero">
-        <div className="hero-media" role="img" aria-label="Real MB Events ballroom with dramatic red lighting and a DJ setup" />
+        <div className="hero-media" role="img" aria-label="Illustrative luxury event with dramatic lighting" />
         <HeroVideo />
         <div className="hero-shade" />
         <header className="site-header shell">
           <a href="/" className="brand" aria-label="MB Events home"><span className="brand-monogram">MB</span><span className="brand-name">MICHAEL BRYAN<br />EVENTS</span></a>
-          <nav className="desktop-nav" aria-label="Primary navigation"><a href="/build">Plan</a><a href="/experiences">Experiences</a><a href="/venues">Venues</a><a href="/real-events">Real events</a><a href="/about">About</a></nav>
+          <Navigation className="desktop-nav" ariaLabel="Primary navigation" />
           <div className="header-actions"><a className="date-link" href="/availability">Check my date <span aria-hidden="true">↗</span></a><a className="menu-link" href="/menu" aria-label="Open menu"><span>MENU</span><span className="menu-bars">☰</span></a></div>
         </header>
         <div className="hero-content shell">
@@ -33,13 +37,13 @@ export default function Home() {
       <section className="quick-section shell"><div className="quick-head"><div><p className="eyebrow">A GOOD PLACE TO START</p><h2>Have a date in mind?</h2></div><p>Dates for prime weekends fill up to 12 months in advance. Enter your date to check team availability.</p></div><QuickAvailability /></section>
       <div className="service-strip" aria-label="MB service areas"><div className="shell"><span>DJ & MC ENTERTAINMENT</span><span>SOUND & LIGHTING</span><span>EVENT PLANNING</span><span>PHOTO EXPERIENCES</span><span>CASINO & KARAOKE</span></div></div>
       <section className="intro-section shell"><p className="eyebrow">THE MB APPROACH</p><div className="intro-grid"><h2>More than a great party.<br /><em>A whole experience.</em></h2><div><p>Every unforgettable event begins with a feeling. We bring together entertainment, production, and thoughtful planning to help that feeling take shape.</p><a className="text-link" href="/build">Tell us what you’re imagining <span aria-hidden="true">↗</span></a></div></div></section>
-      <section className="occasions-section shell"><div className="section-heading"><div><p className="eyebrow">EVERY KIND OF CELEBRATION</p><h2>Make it <em>your moment.</em></h2></div><a className="text-link" href="/build">Start planning ↗</a></div><div className="occasion-grid">{eventPages.slice(0,6).map(item => <a href={`/events/${item.slug}`} key={item.slug}><Image src={item.image} alt="" width={800} height={600} loading="lazy" /><span>{item.title} ↗</span></a>)}</div></section>
+      <InteractiveServiceCards />
       <section className="story-section"><div className="shell"><div className="section-heading"><div><p className="eyebrow">REAL MB MOMENTS</p><h2>The room, <em>transformed.</em></h2></div><a className="text-link" href="/real-events">Explore real moments ↗</a></div><div className="story-grid">{gallery.slice(0,3).map(item => <a href="/real-events" key={item.image}><Image src={item.image} alt={item.alt} width={900} height={650} loading="lazy" /><span>{item.label} ↗</span></a>)}</div></div></section>
       <section className="home-experiences shell"><div className="section-heading"><div><p className="eyebrow">MB EXPERIENCES</p><h2>Choose the <em>feeling.</em></h2></div><a className="text-link" href="/experiences">See all experiences ↗</a></div><div className="home-experience-grid">{experiences.map((item,index) => <a href={`/experiences/${item.slug}`} key={item.slug}><small>0{index+1} / {item.eyebrow}</small><h3>{item.title}</h3><p>{item.description}</p><ul>{item.features.slice(0,3).map(feature => <li key={feature}>{feature}</li>)}</ul><b>Explore ↗</b></a>)}</div></section>
-      <section className="places-preview"><div className="shell places-grid"><div className="places-image" role="img" aria-label="Event ballroom with MB lighting and production" /><div><p className="eyebrow">MB PLACES</p><h2>Find the room.<br /><em>Make it yours.</em></h2><p>Looking for a venue? Share your date, guest count, location, and the atmosphere you have in mind. MB can help you explore spaces that suit your celebration.</p><a className="button button-red" href="/venues">Get venue guidance ↗</a></div></div></section>
-      <section className="future-preview shell"><p className="eyebrow">STRESS-FREE COORDINATION</p><h2>One event.<br /><em>One clear plan.</em></h2><p>Stress-Free Coordination: Every MB client receives access to our proprietary digital timeline and music curation portal.</p><div className="future-grid"><div><span>01 / PLAN</span><h3>A timeline with purpose</h3><p>Keep the key moments and event flow in view.</p></div><div><span>02 / CURATE</span><h3>Music that feels like you</h3><p>Share the songs, styles, and moments that matter.</p></div><div><span>03 / COORDINATE</span><h3>Details in one place</h3><p>Help the MB team shape a celebration that moves beautifully.</p></div></div></section>
+      <VenueLookbookCarousel />
+      <ClientPortalTeaser />
       <TestimonialCarousel />
-      <section className="start-section"><div className="shell start-grid"><div><p className="eyebrow">YOUR EVENT, YOUR WAY</p><h2>Let’s make it<br /><em>unforgettable.</em></h2><p>Tell us what you are celebrating, when, and the kind of night you want. We’ll take it from there.</p><div className="section-ctas"><a className="button button-red" href="/availability">Check my date <span aria-hidden="true">↗</span></a><a className="text-link" href="/build">Build my event <span aria-hidden="true">→</span></a></div></div><div className="start-image" role="img" aria-label="Guests dancing beneath MB production lighting at a real event" /></div></section>
+      <section className="start-section"><div className="shell start-grid"><div><p className="eyebrow">YOUR EVENT, YOUR WAY</p><h2>Let’s make it<br /><em>unforgettable.</em></h2><p>Tell us what you are celebrating, when, and the kind of night you want. We’ll take it from there.</p><div className="section-ctas"><a className="button button-red" href="/availability">Check my date <span aria-hidden="true">↗</span></a><a className="text-link" href="/build">Build my event <span aria-hidden="true">→</span></a></div></div><div className="start-image relative" role="img" aria-label="Illustrative luxury dancefloor with concert-grade lighting"><span className="absolute bottom-3 left-3 bg-[#101b2a]/85 px-3 py-2 text-[.6rem] font-bold uppercase tracking-[.12em] text-white">Illustrative production concept</span></div></div></section>
       <LandingFaq />
       <PublicFooter />
     </main>

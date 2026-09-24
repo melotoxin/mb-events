@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -8,18 +9,21 @@ const testimonials = [
     quote: "It was the perfect blend of songs, and we were dancing all night!",
     attribution: "Abigail G.",
     location: "",
+    avatarUrl: "/media/avatar-abigail.svg",
   },
   {
     event: "Quinceañera",
     quote: "MB really came through for my daughter’s Quinceañera.",
     attribution: "Brian & Rachel M.",
     location: "Muttontown, NY",
+    avatarUrl: "/media/avatar-brian-rachel.svg",
   },
   {
     event: "Bar Mitzvah",
     quote: "you’ll be seeing us soon for our daughter’s Bat Mitzvah within the next year!",
     attribution: "Jennifer L.",
     location: "Syosset, NY",
+    avatarUrl: "/media/avatar-jennifer.svg",
   },
 ] as const;
 
@@ -59,7 +63,7 @@ export function TestimonialCarousel() {
             <li className="testimonial-card" key={item.attribution}>
               <span className="testimonial-index">0{index + 1} / {item.event}</span>
               <blockquote><p>“{item.quote}”</p></blockquote>
-              <p className="testimonial-attribution">{item.attribution}{item.location ? <><span aria-hidden="true"> · </span>{item.location}</> : null}</p>
+              <p className="testimonial-attribution flex items-center gap-3"><Image src={item.avatarUrl} width={42} height={42} alt="" className="rounded-full" /><span>{item.attribution}{item.location ? <><span aria-hidden="true"> · </span>{item.location}</> : null}</span></p>
             </li>
           ))}
         </ul>

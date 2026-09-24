@@ -1,7 +1,7 @@
 const questions = [
   {
     question: "How do the deposit and booking terms work?",
-    answer: "A signed contract and deposit are required to reserve your date. Your proposal and contract will spell out the deposit amount, payment schedule, and any event-specific terms before you commit.",
+    answer: "MB will confirm the deposit amount, payment schedule, and booking terms in your proposal and contract before you commit. Ask about the terms for your specific date.",
   },
   {
     question: "Can MB travel beyond Long Island and New York City?",
@@ -9,7 +9,7 @@ const questions = [
   },
   {
     question: "What happens if sound equipment fails?",
-    answer: "MB brings backup equipment to events. Your team will plan the sound setup for your venue and event before the day arrives.",
+    answer: "Ask your Event Specialist to confirm the backup equipment and contingency plan for your venue and event in the proposal.",
   },
   {
     question: "Can my venue request proof of insurance?",
