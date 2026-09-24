@@ -76,7 +76,7 @@ Source of truth: supplied **MB Events — Digital Event Experience Platform** PR
 | 61 | SEO STRUCTURE | In Progress | Unique event and experience pages with metadata built; local service and venue content pending. |
 | 62 | LOCAL SEARCH | Not Started | No implemented workflow yet. |
 | 63 | CUSTOMER ACCOUNT | Not Started | No implemented workflow yet. |
-| 64 | MOBILE FIRST | In Progress | Mobile layouts and touch controls built; device matrix testing pending. |
+| 64 | MOBILE FIRST | In Progress | Mobile layouts and touch controls built; overflow checked at 375, 430, 768, 1024, 1440, and 1920 pixels. Guest and planner screens remain pending. |
 | 65 | PWA — FUTURE | Future Phase | Scheduled for the phase named in the PRD; no functional claim in this release. |
 | 66 | PRIVACY | In Progress | Anonymous draft token is HttpOnly and event PII is server-side; full host privacy controls pending. |
 | 67 | SECURITY | In Progress | Server validation, same-origin write checks, admin email gate, and audit schema built; MFA, bot protection, backups, and monitoring pending. |
@@ -97,6 +97,6 @@ Source of truth: supplied **MB Events — Digital Event Experience Platform** PR
 - **APIs:** `POST /api/leads`; `GET/PUT /api/drafts`; admin-only `PATCH /api/admin/leads/[id]`.
 - **Database migrations:** `0000_cute_wolf_cub.sql` (leads, anonymous drafts, analytics events); `0001_magenta_gateway.sql` (admin audit).
 - **Security controls present:** server-side Zod validation, prepared SQL, same-origin write checks, HttpOnly draft cookie, configured-email admin gate, audit row on lead edits. The full security checklist remains open.
-- **Tests performed:** TypeScript, production build, local D1 migration application, HTTP render checks, valid and invalid lead submissions, draft save/resume, and restricted admin route check. Record exact outcomes before handoff.
+- **Tests performed:** TypeScript and ESLint passed; production build passed. Both D1 migrations applied locally. Twelve public routes returned HTTP 200. Valid lead submission returned 201, invalid lead submission 400, draft save/resume 200, and unauthorized admin update 403. The event builder and availability UI were completed locally, including the availability WebMCP path. No production end-to-end or accessibility audit has run.
 - **Known limitations:** No production email/SMS delivery, live availability calendar, proposal/contract/payment processor, customer account, verified venue listings, invite/RSVP, planner, guest tools, or referrals. The private preview is not a public launch.
 - **MB input needed:** approved admin email; current logo; original media and publication consent; venue/vendor data; approved packages/pricing; preferred payment, SMS, and email providers; availability workflow.
