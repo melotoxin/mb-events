@@ -1,0 +1,119 @@
+[
+  {
+    "name": "hero-ballroom",
+    "source_page": "https://www.mbeventsny.com/",
+    "source_url": "https://irp.cdn-website.com/9a593b08/dms3rep/multi/opt/hero1-scaled-2304w.jpg",
+    "alt": "A ballroom with a DJ setup, dance floor projection, and tables set for a party, lit in red.",
+    "original_file": "media-archive\\hero-ballroom-source.jpg",
+    "webp_file": "public\\media\\hero-ballroom.webp",
+    "sha256": "cb9943d4d2fc8bd734a50e271be685cb913ce1345cde86248d6e7afc3367f8c3",
+    "pixel_size": [
+      1920,
+      1080
+    ]
+  },
+  {
+    "name": "dj-production",
+    "source_page": "https://www.mbeventsny.com/",
+    "source_url": "https://irp.cdn-website.com/9a593b08/dms3rep/multi/opt/hero2-1+%281%29-2304w.jpg",
+    "alt": "A DJ setup at an event, lit with blue lights. Two people are behind the equipment.",
+    "original_file": "media-archive\\dj-production-source.jpg",
+    "webp_file": "public\\media\\dj-production.webp",
+    "sha256": "ab07308eb2c0f5d6ab4760f0c160d5130e4fe33745318e1376e89cee36c7173f",
+    "pixel_size": [
+      1920,
+      1080
+    ]
+  },
+  {
+    "name": "sweet-sixteen",
+    "source_page": "https://www.mbeventsny.com/",
+    "source_url": "https://irp.cdn-website.com/9a593b08/dms3rep/multi/opt/colts-neck-sweet-16-photographer-78-1920w.jpg",
+    "alt": "Woman in formal dress smiles at Sweet 16 party with navy and gold decorations.",
+    "original_file": "media-archive\\sweet-sixteen-source.jpg",
+    "webp_file": "public\\media\\sweet-sixteen.webp",
+    "sha256": "33b3955404322b5445e80431d0914dfd6d86cf1864b7d9504ced5969539b0698",
+    "pixel_size": [
+      1920,
+      1311
+    ]
+  },
+  {
+    "name": "mitzvah-celebration",
+    "source_page": "https://www.mbeventsny.com/photos",
+    "source_url": "https://irp.cdn-website.com/9a593b08/dms3rep/multi/opt/jessica-bat-mat-111-1920w.jpg",
+    "alt": "People dancing at a party; DJ with microphone, balloons, and disco lighting in a decorated room.",
+    "original_file": "media-archive\\mitzvah-celebration-source.jpg",
+    "webp_file": "public\\media\\mitzvah-celebration.webp",
+    "sha256": "c3ac36730727aec73c6cf9770cec0a323a8ed4849f3a1d7971fa7adce9c5d211",
+    "pixel_size": [
+      900,
+      600
+    ]
+  },
+  {
+    "name": "wedding-dance",
+    "source_page": "https://www.mbeventsny.com/photos",
+    "source_url": "https://irp.cdn-website.com/9a593b08/dms3rep/multi/opt/img_5739-1920w.jpg",
+    "alt": "People dancing at a wedding reception. Woman in red dress, man in white shirt, bride in the middle. Pink lighting.",
+    "original_file": "media-archive\\wedding-dance-source.jpg",
+    "webp_file": "public\\media\\wedding-dance.webp",
+    "sha256": "d6882190cb3e8c52c8f26a21b06b3613c7ba55fb4c0e6d95783f07d6ffc6c66a",
+    "pixel_size": [
+      400,
+      600
+    ]
+  },
+  {
+    "name": "wedding-cake",
+    "source_page": "https://www.mbeventsny.com/",
+    "source_url": "https://irp.cdn-website.com/9a593b08/dms3rep/multi/opt/img_6884-1920w.jpg",
+    "alt": "Bride and groom cutting wedding cake at reception, guests watching and photographing.",
+    "original_file": "media-archive\\wedding-cake-source.jpg",
+    "webp_file": "public\\media\\wedding-cake.webp",
+    "sha256": "5395089bc4e29d3da64a6b85c4b8a36ff76ea16fcd1b853870c67e47764a9339",
+    "pixel_size": [
+      800,
+      600
+    ]
+  },
+  {
+    "name": "photo-booth",
+    "source_page": "https://www.mbeventsny.com/",
+    "source_url": "https://irp.cdn-website.com/9a593b08/dms3rep/multi/opt/130630_165104-1920w.jpg",
+    "alt": "Photo booth strip: Two people wearing props at Samantha's graduation. One wears big red glasses. The other, a witch hat.",
+    "original_file": "media-archive\\photo-booth-source.jpg",
+    "webp_file": "public\\media\\photo-booth.webp",
+    "sha256": "c81ece8370a63de63408023afee0e3f8f840d342c25dd7bfdfe9a7f7af2bf43c",
+    "pixel_size": [
+      600,
+      892
+    ]
+  },
+  {
+    "name": "corporate-party",
+    "source_page": "https://www.mbeventsny.com/",
+    "source_url": "https://irp.cdn-website.com/9a593b08/dms3rep/multi/opt/others-pf6wrdt4q5beyt39aj0b5jm94x04bdgaaxpics1p4g-684h.jpg",
+    "alt": "Party scene: DJ setup, dancing crowd, upper level with bar and person, colorful lights.",
+    "original_file": "media-archive\\corporate-party-source.jpg",
+    "webp_file": "public\\media\\corporate-party.webp",
+    "sha256": "b9651a555a471d51378589f1181e19a069c9c53e59b0c557c0cdc587cb9e48e5",
+    "pixel_size": [
+      1000,
+      600
+    ]
+  },
+  {
+    "name": "mb-logo",
+    "source_page": "https://www.mbeventsny.com/",
+    "source_url": "https://irp.cdn-website.com/9a593b08/dms3rep/multi/logo+%281%29.png",
+    "alt": "Logo for Michael Regan Events, with a dark blue sphere and red initials next to script text.",
+    "original_file": "media-archive\\mb-logo-source.png",
+    "webp_file": "public\\media\\mb-logo.webp",
+    "sha256": "667751549d38fdd42e282a461a26e5620234e0b8d2c2feef517ca036db74d8b5",
+    "pixel_size": [
+      392,
+      57
+    ]
+  }
+]

@@ -1,0 +1,4 @@
+import Link from "next/link";
+import { eventPages } from "@/lib/content";
+export const metadata = { title: "Explore MB Events" };
+export default function MenuPage() { return <main className="menu-page"><div className="shell"><div className="menu-heading"><Link href="/">MB EVENTS</Link><Link href="/" aria-label="Close menu">✕</Link></div><p className="eyebrow">EXPLORE THE EXPERIENCE</p><nav aria-label="Site menu"><Link href="/build">Build my event</Link><Link href="/availability">Check my date</Link><Link href="/experiences">Experiences</Link><Link href="/real-events">Real events</Link><Link href="/venues">Find a venue</Link><Link href="/about">About MB</Link><Link href="/contact">Contact</Link></nav><p className="eyebrow">EVENTS</p><div className="menu-events">{eventPages.map(item => <Link href={`/events/${item.slug}`} key={item.slug}>{item.title}</Link>)}</div></div></main>; }
