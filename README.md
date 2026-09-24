@@ -22,6 +22,8 @@ The lead dashboard lives at `/admin/leads`. It rejects all access until the Site
 
 [`docs/legacy-media-map.md`](docs/legacy-media-map.md) summarizes the audit of the existing MB site. [`docs/legacy-inventory.json`](docs/legacy-inventory.json) holds observed URLs and alt text. [`docs/imported-media.json`](docs/imported-media.json) records source page, URL, hash, and local paths for imported media. Optimized assets are in `public/media`; copies of the served source files are retained locally in ignored `media-archive/`. No page hotlinks the old site for images or video.
 
+Homepage testimonial excerpts and their attributions are recorded in [`docs/testimonial-sources.md`](docs/testimonial-sources.md). The footer accepts verified social profile URLs through `NEXT_PUBLIC_MB_INSTAGRAM_URL`, `NEXT_PUBLIC_MB_TIKTOK_URL`, and `NEXT_PUBLIC_MB_VIMEO_URL`. It renders a platform link only when its exact HTTPS profile URL has been configured; the existing MB website does not expose those profile URLs.
+
 ## What remains
 
-Venue data, customer accounts, proposals, contracts, payments, invites, RSVPs, planning, memories, referrals, and provider integrations remain open as documented in the coverage register. Homepage previews of future customer tools are explicitly labelled as in development.
+Venue data, customer accounts, proposals, contracts, payments, invites, RSVPs, planning, memories, referrals, and provider integrations remain open as documented in the coverage register. The landing page presents MB's current planning and music coordination offer; integrating that portal into this platform is still pending.

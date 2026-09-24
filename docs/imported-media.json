@@ -115,5 +115,18 @@
       392,
       57
     ]
+  },
+  {
+    "name": "luxury-dancefloor",
+    "source_page": "https://www.mbeventsny.com/package",
+    "source_url": "https://irp.cdn-website.com/9a593b08/dms3rep/multi/opt/uplighting-package-1920w.jpg",
+    "alt": "Guests dancing beneath colorful MB production lighting in a ballroom.",
+    "original_file": "media-archive\\luxury-dancefloor-source.jpg",
+    "webp_file": "public\\media\\luxury-dancefloor.webp",
+    "sha256": "d62706c2743a8e807e00c1aead6c5a55bf4a4118f213deed906bcb2afb74bece",
+    "pixel_size": [
+      1920,
+      841
+    ]
   }
 ]

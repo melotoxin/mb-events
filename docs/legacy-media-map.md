@@ -68,5 +68,5 @@ The site uses local WebP derivatives. The served legacy files are retained local
 - MB should confirm rights and publication consent for identifiable guests, especially minors, before broad public launch or event stories.
 - No matched before/after photo pair, verified venue profile, current team portrait, or approved partner profile was established from the public pages. Those slots remain unfilled.
 - The legacy logo's alt text is inconsistent with the site title. The new site uses a text monogram until MB supplies the current approved logo file.
-- Existing review excerpts should be checked with MB before broader reuse. The homepage carries one short quote from the existing reviews page with a link back to its source.
+- Existing review excerpts should be checked with MB before broader reuse. The homepage now uses three short, attributed excerpts from MB's own pages; their sources are recorded in `docs/testimonial-sources.md` without sending visitors back to the old site.
 - The gallery contains many repeated resized images. The JSON inventory preserves every observed URL and its page context; it is not a rights ledger or a guarantee of ownership.
