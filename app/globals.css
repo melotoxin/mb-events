@@ -23,3 +23,5 @@
 .inner-menu{display:none;align-items:center;gap:10px;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
 @media(max-width:900px){.inner-menu{display:inline-flex}}
 @media(max-width:700px){.inner-date{display:none}}
+
+@media(max-width:1100px){.inner-header nav{display:none}.inner-menu{display:inline-flex}}

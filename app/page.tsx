@@ -8,8 +8,9 @@ import { Navigation } from "@/components/site-navigation";
 import { InteractiveServiceCards } from "@/components/interactive-service-cards";
 import { VenueLookbookCarousel } from "@/components/venue-lookbook-carousel";
 import { ClientPortalTeaser } from "@/components/client-portal-teaser";
-import { AdvancedButton } from "@/components/advanced-button";
 import { AdvancedCard } from "@/components/advanced-card";
+import { BrandLogo } from "@/components/brand-logo";
+import { ModernGhostButton } from "@/components/modern-ghost-button";
 import { experiences, gallery } from "@/lib/content";
 
 const eventTypes = ["Weddings", "Sweet 16s", "Quinceañeras", "Mitzvahs", "Corporate", "Private events"];
@@ -22,16 +23,16 @@ export default function Home() {
         <HeroVideo />
         <div className="hero-shade" />
         <header className="site-header shell">
-          <a href="/" className="brand" aria-label="MB Events home"><span className="brand-monogram">MB</span><span className="brand-name">MICHAEL BRYAN<br />EVENTS</span></a>
+          <BrandLogo />
           <Navigation className="desktop-nav" ariaLabel="Primary navigation" />
-          <div className="header-actions"><AdvancedButton href="/availability" size="compact" arrow="up-right" className="date-link">Check my date</AdvancedButton><a className="menu-link" href="/menu" aria-label="Open menu"><span>MENU</span><span className="menu-bars">☰</span></a></div>
+          <div className="header-actions"><ModernGhostButton href="/availability" tone="dark" className="hidden min-[701px]:inline-flex">Check my date</ModernGhostButton><a className="menu-link" href="/menu" aria-label="Open menu"><span>MENU</span><span className="menu-bars">☰</span></a></div>
         </header>
         <div className="hero-content shell">
           <div className="hero-rule"><span>MICHAEL BRYAN EVENTS</span><span>NEW YORK · LONG ISLAND · BEYOND</span></div>
           <p className="eyebrow hero-eyebrow">ENTERTAINMENT, PLANNING & EVERYTHING IN BETWEEN</p>
           <h1>Your event<br /><em>starts here.</em></h1>
           <p className="hero-intro">The music. The atmosphere. The moments everyone remembers. Start planning a celebration that feels entirely yours.</p>
-          <div className="hero-ctas"><AdvancedButton href="/availability" arrow="up-right">Check my date</AdvancedButton><AdvancedButton href="/build" variant="outline" tone="dark">Build my event</AdvancedButton></div>
+          <div className="hero-ctas"><ModernGhostButton href="/availability" tone="dark">Check my date</ModernGhostButton><a className="text-link text-white" href="/build">Build my event <span aria-hidden="true">↗</span></a></div>
           <div className="hero-bottom"><p>THE RIGHT ENERGY FOR EVERY OCCASION</p><ul>{eventTypes.map((type) => <li key={type}>{type}</li>)}</ul></div>
         </div>
         <div className="hero-side-label">01 / THE BEGINNING</div>
@@ -45,7 +46,7 @@ export default function Home() {
       <VenueLookbookCarousel />
       <ClientPortalTeaser />
       <TestimonialCarousel />
-      <section className="start-section"><div className="shell start-grid"><div><p className="eyebrow">YOUR EVENT, YOUR WAY</p><h2>Let’s make it<br /><em>unforgettable.</em></h2><p>Tell us what you are celebrating, when, and the kind of night you want. We’ll take it from there.</p><div className="section-ctas"><AdvancedButton href="/availability" arrow="up-right">Check my date</AdvancedButton><a className="text-link" href="/build">Build my event <span aria-hidden="true">→</span></a></div></div><div className="start-image relative" role="img" aria-label="Illustrative luxury dancefloor with concert-grade lighting"><span className="absolute bottom-3 left-3 bg-[#101b2a]/85 px-3 py-2 text-[.6rem] font-bold uppercase tracking-[.12em] text-white">Illustrative production concept</span></div></div></section>
+      <section className="start-section"><div className="shell start-grid"><div><p className="eyebrow">YOUR EVENT, YOUR WAY</p><h2>Let’s make it<br /><em>unforgettable.</em></h2><p>Tell us what you are celebrating, when, and the kind of night you want. We’ll take it from there.</p><div className="section-ctas"><ModernGhostButton href="/availability" tone="dark">Check my date</ModernGhostButton><a className="text-link" href="/build">Build my event <span aria-hidden="true">→</span></a></div></div><div className="start-image relative" role="img" aria-label="Illustrative luxury dancefloor with concert-grade lighting"><span className="absolute bottom-3 left-3 bg-[#101b2a]/85 px-3 py-2 text-[.6rem] font-bold uppercase tracking-[.12em] text-white">Illustrative production concept</span></div></div></section>
       <LandingFaq />
       <PublicFooter />
     </main>

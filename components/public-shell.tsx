@@ -1,6 +1,7 @@
 import { Camera, Music2, Video } from "lucide-react";
 import { Navigation } from "@/components/site-navigation";
-import { AdvancedButton } from "@/components/advanced-button";
+import { BrandLogo } from "@/components/brand-logo";
+import { ModernGhostButton } from "@/components/modern-ghost-button";
 
 const socialProfiles = [
   { label: "Instagram", host: "instagram.com", href: process.env.NEXT_PUBLIC_MB_INSTAGRAM_URL || "", Icon: Camera },
@@ -16,7 +17,7 @@ const socialProfiles = [
 });
 
 export function PublicHeader() {
-  return <header className="inner-header"><div className="shell inner-header-row"><a className="inner-brand" href="/"><span className="brand-monogram">MB</span><span>MICHAEL BRYAN<br />EVENTS</span></a><Navigation ariaLabel="Main navigation" /><AdvancedButton href="/availability" size="compact" arrow="up-right" className="inner-date">Check My Date</AdvancedButton><a className="inner-menu" href="/menu" aria-label="Open menu">Menu <span aria-hidden="true">☰</span></a></div></header>;
+  return <header className="inner-header"><div className="shell inner-header-row"><BrandLogo /><Navigation ariaLabel="Main navigation" /><ModernGhostButton href="/availability" tone="dark" className="hidden min-[701px]:inline-flex">Check My Date</ModernGhostButton><a className="inner-menu" href="/menu" aria-label="Open menu">Menu <span aria-hidden="true">☰</span></a></div></header>;
 }
 
 export function PublicFooter() {
