@@ -1,9 +1,9 @@
 import { env } from "cloudflare:workers";
+import { hasAllowedWriteOrigin } from "@/lib/request-origin";
 import { leadSchema } from "@/lib/lead";
 
 export async function POST(request: Request) {
-  const origin = request.headers.get("origin");
-  if (origin && origin !== new URL(request.url).origin) return Response.json({ error: "Invalid request origin." }, { status: 403 });
+  if (!hasAllowedWriteOrigin(request)) return Response.json({ error: "Invalid request origin." }, { status: 403 });
   let raw: unknown;
   try { raw = await request.json(); } catch { return Response.json({ error: "Invalid request." }, { status: 400 }); }
   const parsed = leadSchema.safeParse(raw);

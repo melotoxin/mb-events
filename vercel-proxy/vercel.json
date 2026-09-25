@@ -1,6 +1,18 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
+  "redirects": [
+    {
+      "source": "/admin",
+      "destination": "https://mb-events.s-maazahmed28feb.chatgpt.site/admin",
+      "permanent": false
+    },
+    {
+      "source": "/admin/:path*",
+      "destination": "https://mb-events.s-maazahmed28feb.chatgpt.site/admin/:path*",
+      "permanent": false
+    }
+  ],
   "rewrites": [
     {
       "source": "/",

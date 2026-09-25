@@ -1,6 +1,7 @@
 import { env } from "cloudflare:workers";
 import { z } from "zod";
 import { eventTypes, guestRanges, priorities, vibes } from "@/lib/lead";
+import { hasAllowedWriteOrigin } from "@/lib/request-origin";
 
 const stateSchema = z.object({
   eventType: z.enum(eventTypes).optional(), eventDate: z.union([z.string().regex(/^\d{4}-\d{2}-\d{2}$/), z.literal("")]).optional(), dateUnknown: z.boolean().optional(), guestCount: z.enum(guestRanges).optional(), venueStatus: z.enum(["selected", "need_venue", "deciding"]).optional(), vibe: z.enum(vibes).optional(), priorities: z.array(z.enum(priorities)).max(10).optional(), step: z.number().int().min(0).max(7).optional(),
@@ -23,8 +24,7 @@ export async function GET(request: Request) {
 }
 
 export async function PUT(request: Request) {
-  const origin = request.headers.get("origin");
-  if (origin && origin !== new URL(request.url).origin) return Response.json({ error: "Invalid request origin." }, { status: 403 });
+  if (!hasAllowedWriteOrigin(request)) return Response.json({ error: "Invalid request origin." }, { status: 403 });
   if (!env.DB) return Response.json({ error: "Saving is temporarily unavailable." }, { status: 503 });
   let raw: unknown;
   try { raw = await request.json(); } catch { return Response.json({ error: "Invalid request." }, { status: 400 }); }
