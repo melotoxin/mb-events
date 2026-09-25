@@ -1,0 +1,14 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "https://mb-events.s-maazahmed28feb.chatgpt.site/"
+    },
+    {
+      "source": "/:path*",
+      "destination": "https://mb-events.s-maazahmed28feb.chatgpt.site/:path*"
+    }
+  ]
+}
